@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Буклет: Искусственный интеллект | Волочаевский лицей</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #e2e8f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Segoe UI', 'Roboto', 'Times New Roman', serif;
+            padding: 30px;
+        }
+
+        /* Контейнер для печати */
+        .booklet {
+            max-width: 1100px;
+            width: 100%;
+        }
+
+        /* Лист буклета (каждая страница) */
+        .page {
+            background: white;
+            box-shadow: 0 20px 35px -10px rgba(0,0,0,0.2);
+            margin-bottom: 40px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        /* Двухколоночная сетка для лицевой и оборотной стороны */
+        .two-columns {
+            display: flex;
+            flex-wrap: wrap;
+            min-height: 280px; /* высота под содержание */
+        }
+
+        .col {
+            flex: 1;
+            padding: 25px 22px;
+            background: white;
+            box-sizing: border-box;
+        }
+
+        .col:first-child {
+            border-right: 1px solid #e2e8f0;
+        }
+
+        /* Стили для текста */
+        h1 {
+            font-size: 26px;
+            color: #0f172a;
+            margin-bottom: 10px;
+            font-weight: 800;
+            letter-spacing: -0.3px;
+        }
+
+        h2 {
+            font-size: 18px;
+            color: #1e40af;
+            border-left: 5px solid #3b82f6;
+            padding-left: 12px;
+            margin: 18px 0 12px 0;
+            font-weight: 700;
+        }
+
+        h3 {
+            font-size: 16px;
+            color: #0f172a;
+            margin: 12px 0 6px 0;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-size: 14px;
+            color: #334155;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        p {
+            font-size: 13px;
+            line-height: 1.45;
+            color: #1e293b;
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+
+        .highlight {
+            background: #eef2ff;
+            padding: 12px;
+            border-radius: 14px;
+            margin: 15px 0;
+            border-left: 4px solid #3b82f6;
+        }
+
+        .risk-box {
+            background: #fef2f2;
+            border-left: 4px solid #ef4444;
+            padding: 10px 14px;
+            margin: 14px 0;
+            border-radius: 12px;
+        }
+
+        .rule {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 8px 12px;
+            margin: 10px 0;
+            font-weight: 500;
+            font-size: 12px;
+        }
+
+        .icon-emoji {
+            font-size: 20px;
+            display: inline-block;
+            margin-right: 6px;
+        }
+
+        .grid-2 {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin: 12px 0;
+        }
+
+        .grid-2 > div {
+            flex: 1;
+            background: #f8fafc;
+            padding: 10px;
+            border-radius: 14px;
+        }
+
+        .footer-note {
+            margin-top: 20px;
+            font-size: 10px;
+            color: #64748b;
+            text-align: center;
+            border-top: 1px dashed #cbd5e1;
+            padding-top: 12px;
+        }
+
+        hr {
+            margin: 12px 0;
+            border: 0;
+            height: 1px;
+            background: #e2e8f0;
+        }
+
+        .qr-placeholder {
+            background: #f1f5f9;
+            padding: 12px;
+            text-align: center;
+            border-radius: 16px;
+            margin: 15px 0;
+            font-family: monospace;
+            font-size: 12px;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+                margin: 0;
+            }
+            .page {
+                box-shadow: none;
+                margin: 0;
+                page-break-after: always;
+            }
+            .col {
+                break-inside: avoid;
+            }
+            .two-columns {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="booklet">
+    <!-- СТРАНИЦА 1: ЛИЦЕВАЯ (внешняя сторона буклета) -->
+    <div class="page">
+        <div class="two-columns">
+            <!-- Левая колонка (лицевая часть, передняя обложка) -->
+            <div class="col" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white;">
+                <div style="min-height: 250px; display: flex; flex-direction: column; justify-content: center;">
+                    <div style="font-size: 14px; letter-spacing: 2px; color: #94a3b8; margin-bottom: 12px;">ВОЛОЧАЕВСКИЙ ЛИЦЕЙ</div>
+                    <h1 style="color: white; font-size: 34px; margin-bottom: 12px;">ИСКУССТВЕННЫЙ<br>ИНТЕЛЛЕКТ</h1>
+                    <div style="font-size: 20px; font-weight: bold; color: #38bdf8; margin-bottom: 12px;">ПРОСТО О СЛОЖНОМ</div>
+                    <div style="height: 4px; width: 60px; background: #3b82f6; margin: 16px 0;"></div>
+                    <p style="color: #cbd5e1; font-size: 12px;">Что нужно знать каждому школьнику о возможностях, рисках и будущем ИИ</p>
+                    <div style="margin-top: 30px;">
+                        <p style="color: #94a3b8; font-size: 11px;">Автор: Мещеряков Евгений, 8.2 класс<br>Руководитель: Мещерякова Е.В.<br>2026 г.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Правая колонка (внутренняя часть — содержание) -->
+            <div class="col">
+                <h2>🤖 ЧТО ТАКОЕ ИИ?</h2>
+                <p><strong>Искусственный интеллект (ИИ)</strong> — способность компьютера учиться, распознавать образы, принимать решения и выполнять задачи, которые раньше требовали человеческого ума.</p>
+                <div class="highlight">
+                    <strong>📌 ПРОСТЫМИ СЛОВАМИ:</strong><br>
+                    ИИ — это когда программа сама находит закономерности в данных и улучшается с опытом. Как человек, только быстрее!
+                </div>
+                <h2>📌 ВИДЫ ИИ</h2>
+                <div class="grid-2">
+                    <div><strong>🔷 Узкий ИИ</strong><br>Решает одну задачу. Siri, ChatGPT, рекомендации YouTube.</div>
+                    <div><strong>🔶 Общий ИИ</strong><br>Как человек (пока не создан). Способен мыслить и учиться чему угодно.</div>
+                </div>
+                <p><strong>🌟 Суперинтеллект</strong> — гипотетический ИИ, умнее всех людей вместе. Пока из области фантастики.</p>
+                <div class="footer-note">Волочаевский лицей им. А.В. Попова</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- СТРАНИЦА 2: ОБОРОТ (разворот с плюсами/минусами и правилами) -->
+    <div class="page">
+        <div class="two-columns">
+            <!-- левая колонка: где применяется + плюсы -->
+            <div class="col">
+                <h2>🌍 ГДЕ ПРИМЕНЯЕТСЯ ИИ СЕГОДНЯ?</h2>
+                <p>🏥 <strong>Медицина:</strong> диагностика рака, расшифровка снимков МРТ (точнее врача!)</p>
+                <p>🚗 <strong>Транспорт:</strong> беспилотные автомобили Tesla, Яндекс.Такси</p>
+                <p>🎓 <strong>Образование:</strong> адаптивные тренажёры, проверка сочинений, репетиторы-нейросети</p>
+                <p>💰 <strong>Финансы:</strong> выявление мошенничества, роботы-трейдеры</p>
+                <p>🎨 <strong>Искусство:</strong> Midjourney, Кандинский — рисуют картины, генерируют музыку</p>
+                <p>🏠 <strong>Быт:</strong> умные колонки, рекомендации TikTok/YouTube</p>
+                
+                <h2>✅ ВОЗМОЖНОСТИ И ПЛЮСЫ</h2>
+                <p>✔ Автоматизация скучных задач (ИИ освобождает время).<br>
+                ✔ Повышение точности — ошибок меньше, чем у человека.<br>
+                ✔ Доступность 24/7 — ИИ работает без выходных.<br>
+                ✔ Персонализация: музыка, товары, новости — только для вас.<br>
+                ✔ Ускорение научных открытий (например, предсказание белков).</p>
+                
+                <div class="footer-note">Помни: ИИ — это мощный помощник, но не замена своему мышлению.</div>
+            </div>
+            <!-- правая колонка: риски + этика + правила безопасности -->
+            <div class="col">
+                <h2>⚠️ РИСКИ И ОТРИЦАТЕЛЬНЫЕ ПОСЛЕДСТВИЯ</h2>
+                <div class="risk-box">
+                    <strong>📉 Потеря рабочих мест</strong><br> К 2030 году ИИ заменит 85 млн профессий (кассиры, переводчики, операторы). Но появятся и новые.
+                </div>
+                <div class="risk-box">
+                    <strong>⚖️ Предвзятость алгоритмов</strong><br>Если ИИ обучать на данных с ошибками, он будет дискриминировать людей.
+                </div>
+                <div class="risk-box">
+                    <strong>🎭 Deepfake</strong><br>Подделка видео и голоса — можно создать фейковое выступление политика или смонтировать видео с любым лицом.
+                </div>
+                <div class="risk-box">
+                    <strong>🧠 Снижение критического мышления</strong><br>Школьники списывают у ChatGPT, перестают анализировать сами.
+                </div>
+                
+                <h2>⚖️ ЭТИЧЕСКИЕ ВОПРОСЫ</h2>
+                <p>❓ Кто виноват, если беспилотная машина собьёт человека?<br>
+                ❓ Можно ли доверять ИИ своё здоровье, деньги, тайны?<br>
+                ❓ Должны ли компании раскрывать, как работает их ИИ?</p>
+                
+                <h2>🛡️ 3 ПРАВИЛА БЕЗОПАСНОСТИ (для школьников)</h2>
+                <div class="rule">🔹 <strong>Не верь всему, что пишет нейросеть.</strong> ChatGPT может ошибаться («галлюцинировать»). Проверяй факты!</div>
+                <div class="rule">🔹 <strong>Не загружай личные данные.</strong> Фото, пароли, адреса — не отправляй в открытые боты.</div>
+                <div class="rule">🔹 <strong>Не списывай готовые ответы.</strong> Используй ИИ как помощника для идей, но учись думать сам.</div>
+                
+                <div class="qr-placeholder">
+                    📲 ХОЧЕШЬ БОЛЬШЕ УЗНАТЬ?<br>
+                    Сканируй QR-код на сайте лицея (раздел «Цифровая грамотность»)
+                </div>
+                <div class="footer-note">Проект выполнен в рамках индивидуальной проектной деятельности. Материал рекомендован для уроков информатики и классных часов.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Дополнительная вкладка: примечание для печати (необязательная, но полезная) -->
+    <div style="background: #f1f5f9; padding: 14px; border-radius: 20px; font-size: 12px; text-align: center; margin-top: 20px;">
+        🖨️ <strong>Как распечатать буклет:</strong> откройте файл в браузере → нажмите «Печать» (Ctrl+P) → выберите двустороннюю печать (переворот по короткому краю). Вы получите готовый буклет А4. <br>
+        📍 Автор: Мещеряков Евгений, руководитель: Мещерякова Е.В. — Волочаевский лицей, Хабаровск.
+    </div>
+</div>
+</body>
+</html>
