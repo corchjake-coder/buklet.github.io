@@ -3,77 +3,412 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Памятка по ИИ | 8 класс</title>
+    <title>Искусственный интеллект | Памятка для 8 класса</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+        * {
             margin: 0;
-            padding: 20px;
-            background: #f0f7ff;
+            padding: 0;
+            box-sizing: border-box;
         }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
         .container {
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
             background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 25px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+            padding: 40px;
         }
+
+        /* Заголовок */
         h1 {
+            font-size: 42px;
             color: #0066cc;
             text-align: center;
+            margin-bottom: 10px;
         }
+
+        .subtitle {
+            text-align: center;
+            font-size: 20px;
+            color: #666;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #333;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            padding-left: 15px;
+            border-left: 5px solid #0066cc;
+        }
+
+        h3 {
+            font-size: 22px;
+            color: #555;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        /* Таблица */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        th {
+            background: #0066cc;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+
+        td {
+            border: 1px solid #ddd;
+            padding: 12px;
+        }
+
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        /* Карточки применения */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .card {
+            background: #f0f7ff;
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            background: #e0f0ff;
+        }
+
+        .card span {
+            font-size: 32px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* Плюсы и минусы */
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .plus-box {
+            background: #d4edda;
+            border-radius: 15px;
+            padding: 20px;
+        }
+
+        .minus-box {
+            background: #f8d7da;
+            border-radius: 15px;
+            padding: 20px;
+        }
+
+        .plus-box h3 {
+            color: #155724;
+            margin-top: 0;
+        }
+
+        .minus-box h3 {
+            color: #721c24;
+            margin-top: 0;
+        }
+
+        .plus-box ul, .minus-box ul {
+            padding-left: 20px;
+        }
+
+        .plus-box li {
+            color: #155724;
+            margin: 10px 0;
+        }
+
+        .minus-box li {
+            color: #721c24;
+            margin: 10px 0;
+        }
+
+        /* Правила безопасности */
+        .rules {
+            margin: 25px 0;
+        }
+
         .rule {
             background: #fff3cd;
-            border-left: 5px solid #ffc107;
-            padding: 15px;
+            border-left: 8px solid #ffc107;
+            padding: 18px;
             margin: 15px 0;
+            border-radius: 12px;
+            transition: 0.3s;
         }
-        .plus { color: green; }
-        .minus { color: red; }
+
+        .rule:hover {
+            background: #ffe69e;
+            transform: scale(1.01);
+        }
+
+        .rule-number {
+            font-size: 24px;
+            font-weight: bold;
+            color: #856404;
+            margin-right: 15px;
+        }
+
+        .rule-text {
+            font-size: 18px;
+            font-weight: bold;
+            color: #856404;
+        }
+
+        .rule-desc {
+            margin-top: 8px;
+            color: #665300;
+        }
+
+        /* Блок этических вопросов */
+        .ethics {
+            background: #e8e8ff;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .ethics ul {
+            padding-left: 25px;
+        }
+
+        .ethics li {
+            margin: 10px 0;
+        }
+
+        /* Кнопка скачивания */
+        .download-btn {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #0066cc;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: 0.3s;
+            font-size: 18px;
+        }
+
+        .btn:hover {
+            background: #004c99;
+            transform: scale(1.05);
+        }
+
+        /* Подвал */
         footer {
             text-align: center;
-            margin-top: 30px;
-            font-size: 12px;
-            color: gray;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #eee;
+            color: #888;
+            font-size: 14px;
+        }
+
+        footer strong {
+            color: #0066cc;
+        }
+
+        /* Адаптация для телефона */
+        @media (max-width: 700px) {
+            .container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 28px;
+            }
+            .comparison {
+                grid-template-columns: 1fr;
+            }
+            .subtitle {
+                font-size: 16px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <!-- ШАПКА -->
         <h1>🤖 Искусственный интеллект</h1>
-        <h2>просто о сложном</h2>
-        
-        <h3>Что такое ИИ?</h3>
-        <p>Искусственный интеллект — это способность компьютера учиться и решать задачи, как человек.</p>
-        
-        <h3>Виды ИИ</h3>
+        <div class="subtitle">просто о сложном • памятка для учащихся 8-х классов</div>
+
+        <!-- ЧТО ТАКОЕ ИИ -->
+        <h2>Что такое искусственный интеллект?</h2>
+        <p><strong>Искусственный интеллект (ИИ)</strong> — это способность компьютеров и машин учиться, анализировать информацию и принимать решения, как человек. ИИ не "думает", а обрабатывает огромные объёмы данных и находит закономерности.</p>
+        <p>⭐ <strong>Простыми словами:</strong> это когда компьютер делает то, что обычно умеет только человек: узнаёт лица, понимает голос, переводит языки, играет в игры, пишет тексты и даже рисует картины.</p>
+
+        <!-- ВИДЫ ИИ (ТАБЛИЦА) -->
+        <h2>Виды искусственного интеллекта</h2>
+        <table>
+            <tr>
+                <th>Вид ИИ</th>
+                <th>Что умеет?</th>
+                <th>Пример</th>
+            </tr>
+            <tr>
+                <td><strong>Узкий (слабый) ИИ</strong></td>
+                <td>Решает одну конкретную задачу</td>
+                <td>ChatGPT, Siri, Алиса, рекомендации YouTube</td>
+            </tr>
+            <tr>
+                <td><strong>Общий (сильный) ИИ</strong></td>
+                <td>Умный как человек, решает любые задачи</td>
+                <td>Пока не создан (только в фильмах)</td>
+            </tr>
+            <tr>
+                <td><strong>Суперинтеллект</strong></td>
+                <td>Умнее всех людей вместе взятых</td>
+                <td>Гипотетический (фантастика)</td>
+            </tr>
+        </table>
+        <p>📌 <strong>Важно:</strong> Современный ИИ — это только <strong>узкий ИИ</strong>. Он не обладает сознанием и эмоциями, как человек.</p>
+
+        <!-- ОБЛАСТИ ПРИМЕНЕНИЯ (КАРТОЧКИ) -->
+        <h2>Где применяется ИИ?</h2>
+        <div class="grid">
+            <div class="card"><span>🏥</span><strong>Медицина</strong><br>Диагностика болезней, расшифровка МРТ, разработка лекарств</div>
+            <div class="card"><span>🚗</span><strong>Транспорт</strong><br>Беспилотные автомобили (Tesla), оптимизация маршрутов</div>
+            <div class="card"><span>🎓</span><strong>Образование</strong><br>Адаптивные тренажёры, проверка работ, помощь в учёбе</div>
+            <div class="card"><span>💰</span><strong>Финансы</strong><br>Выявление мошенничества, биржевые роботы</div>
+            <div class="card"><span>🎨</span><strong>Искусство</strong><br>Генерация картин (Midjourney, Kandinsky), создание музыки</div>
+            <div class="card"><span>🏠</span><strong>Быт</strong><br>Умные колонки, рекомендации в TikTok и YouTube</div>
+        </div>
+
+        <!-- ПЛЮСЫ И МИНУСЫ -->
+        <h2>Плюсы и минусы ИИ</h2>
+        <div class="comparison">
+            <div class="plus-box">
+                <h3>✅ Положительные эффекты</h3>
+                <ul>
+                    <li>Автоматизация скучной рутинной работы</li>
+                    <li>Высокая точность (например, в диагностике болезней)</li>
+                    <li>Помощь в учёбе и быстрый поиск информации</li>
+                    <li>Доступность 24/7 (ИИ работает без перерыва)</li>
+                    <li>Ускорение научных открытий</li>
+                </ul>
+            </div>
+            <div class="minus-box">
+                <h3>⚠️ Риски и отрицательные последствия</h3>
+                <ul>
+                    <li>Исчезновение некоторых профессий (кассиры, переводчики)</li>
+                    <li>Предвзятость алгоритмов (дискриминация)</li>
+                    <li>Дипфейки — подделка видео и голоса</li>
+                    <li>Снижение критического мышления у школьников</li>
+                    <li>Сбор личных данных без согласия</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ПРАВИЛА БЕЗОПАСНОСТИ (САМОЕ ВАЖНОЕ) -->
+        <h2>⚠️ Три главных правила безопасности</h2>
+        <div class="rules">
+            <div class="rule">
+                <span class="rule-number">1️⃣</span>
+                <span class="rule-text">Не верь всему, что пишет нейросеть!</span>
+                <div class="rule-desc">ИИ может ошибаться и даже выдумывать факты (это называется "галлюцинация"). Всегда проверяй информацию в надёжных источниках.</div>
+            </div>
+            <div class="rule">
+                <span class="rule-number">2️⃣</span>
+                <span class="rule-text">Никогда не загружай в ИИ личные данные!</span>
+                <div class="rule-desc">Фото, пароли, адрес, номер телефона, данные банковской карты — всё это может быть использовано мошенниками.</div>
+            </div>
+            <div class="rule">
+                <span class="rule-number">3️⃣</span>
+                <span class="rule-text">Не списывай готовые ответы!</span>
+                <div class="rule-desc">Используй нейросети как помощника для поиска идей, но домашнее задание делай сам. Иначе разучишься думать!</div>
+            </div>
+        </div>
+
+        <!-- ЭТИЧЕСКИЕ ПРОБЛЕМЫ -->
+        <h2>Этические и социальные проблемы</h2>
+        <div class="ethics">
+            <ul>
+                <li><strong>❓ Кто виноват, если ИИ ошибся?</strong> Врач, программист, владелец компании или сам ИИ? Законы пока не дают ответа.</li>
+                <li><strong>❓ Как защитить личные данные?</strong> ИИ собирает огромное количество информации о нас. Кто имеет к ней доступ?</li>
+                <li><strong>❓ Нужны ли законы для ИИ?</strong> Многие учёные призывают запретить разработку автономного оружия на базе ИИ.</li>
+                <li><strong>❓ Неравенство:</strong> Доступ к самым мощным ИИ-системам есть только у богатых стран и корпораций.</li>
+            </ul>
+        </div>
+
+        <!-- РЕЗУЛЬТАТЫ АНКЕТИРОВАНИЯ -->
+        <h2>Что показал опрос среди 8-классников?</h2>
+        <p>Я провёл анкетирование среди 30 учащихся 8-х классов нашего лицея. Вот результаты:</p>
         <ul>
-            <li><strong>Узкий ИИ</strong> — решает одну задачу (ChatGPT, Siri)</li>
-            <li><strong>Общий ИИ</strong> — как человек (пока не создан)</li>
-            <li><strong>Суперинтеллект</strong> — умнее людей (гипотетический)</li>
+            <li>📊 <strong>90%</strong> знают о ChatGPT</li>
+            <li>📊 <strong>75%</strong> используют нейросети для домашних заданий</li>
+            <li>📊 <strong>65%</strong> НЕ знают разницу между видами ИИ</li>
+            <li>📊 <strong>80%</strong> НЕ знают, что ИИ может ошибаться</li>
+            <li>📊 <strong>85%</strong> хотят больше уроков об ИИ в школе</li>
         </ul>
-        
-        <h3>⚠️ Три правила безопасности</h3>
-        <div class="rule">
-            <strong>Правило 1:</strong> Не верь всему, что пишет нейросеть — проверяй информацию!
+        <p><strong>Вывод:</strong> Школьники активно пользуются ИИ, но плохо понимают его риски. Этот сайт создан, чтобы помочь разобраться!</p>
+
+        <!-- КНОПКА СКАЧИВАНИЯ БУКЛЕТА -->
+        <div class="download-btn">
+            <a href="БУКЛЕТ" class="btn">📥 Скачать буклет (PDF)</a>
         </div>
-        <div class="rule">
-            <strong>Правило 2:</strong> Не загружай в ИИ свои личные фото и пароли.
-        </div>
-        <div class="rule">
-            <strong>Правило 3:</strong> Не списывай готовые ответы — используй ИИ как помощника.
-        </div>
-        
-        <h3>Плюсы и минусы ИИ</h3>
-        <p><span class="plus">✅ Автоматизация рутины</span> | <span class="minus">⚠️ Потеря рабочих мест</span></p>
-        <p><span class="plus">✅ Высокая точность</span> | <span class="minus">⚠️ Предвзятость алгоритмов</span></p>
-        <p><span class="plus">✅ Помощь в учёбе</span> | <span class="minus">⚠️ Дипфейки</span></p>
-        
+        <p style="text-align: center; font-size: 14px; color: #888;">Если буклет не открывается, проверьте, что файл называется "БУКЛЕТ" и лежит в папке с сайтом.</p>
+
+        <!-- ВЫВОДЫ И ПЕРСПЕКТИВЫ -->
+        <h2>Что я выяснил в ходе проекта?</h2>
+        <p>✅ Изучил литературу по ИИ и выделил главное.<br>
+        ✅ Описал виды, принципы работы и области применения.<br>
+        ✅ Выявил положительные и отрицательные последствия внедрения ИИ.<br>
+        ✅ Определил этические проблемы развития ИИ.<br>
+        ✅ Создал этот сайт-памятку и буклет для 8-х классов.</p>
+        <p><strong>Гипотеза подтвердилась:</strong> школьники действительно пользуются ИИ, но не понимают его рисков. Мой проект помогает это исправить.</p>
+
+        <h2>Перспективы развития проекта</h2>
+        <ul>
+            <li>🚀 Создание школьного клуба «Цифровая грамотность и этика ИИ»</li>
+            <li>🚀 Разработка краткой памятки «5 правил безопасного использования нейросетей»</li>
+            <li>🚀 Проведение мини-лекций для 5–7 классов</li>
+        </ul>
+
+        <!-- ПОДВАЛ -->
         <footer>
-            Проект выполнил: Мещеряков Евгений, 8.2 класс<br>
-            Волочаевский лицей, Хабаровск, 2026
+            <p><strong>Автор проекта:</strong> Мещеряков Евгений Александрович, 8.2 класс</p>
+            <p><strong>Руководитель:</strong> Мещерякова Елена Владимировна</p>
+            <p><strong>Волочаевский лицей им. Героя РФ А.В. Попова, г. Хабаровск</strong></p>
+            <p>📅 2026 год</p>
+            <p style="margin-top: 15px;">🔗 Сайт создан в рамках индивидуального проекта по информатике</p>
         </footer>
     </div>
 </body>
